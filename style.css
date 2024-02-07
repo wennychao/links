@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Anton&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;1,6..12,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Anton&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,600&display=swap');
 
 :root {
     --font-size: 20px;
@@ -78,6 +78,19 @@ img {
     border-radius: 5%;
     border-color: var(--color);
     box-shadow: 2px 2px 4px rgb(175, 175, 175);
+}
+
+.article {
+    text-align: left;
+    font-size: calc(var(--font-size)*1.5);
+    font-family: 'Bodoni Moda', serif;
+    margin-top: -5px;
+    text-transform: initial;
+    list-style:inside;
+}
+
+.article:hover {
+    text-decoration: underline;
 }
 
 footer {
