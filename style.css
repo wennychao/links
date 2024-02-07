@@ -65,7 +65,7 @@ li:hover {
     font-size: calc(var(--font-size)*2);
 }
 
-section {
+picture {
     display: flex;
     justify-content: center;
 }
