@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Anton&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,600&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Anton&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,600&display=swap');
 
 :root {
     --font-size: 20px;
@@ -104,4 +104,131 @@ footer {
     text-align: center;
     margin-bottom: -3rem;
     height: 2rem;
+}*/
+
+
+
+
+
+
+
+/* class demo
+body {
+	--spacing: 2em;
+
+	font-family: monospace;
+	padding: var(--spacing);
+}
+
+body, header, section, ul, li, footer, address {
+	display: grid;
+	gap: var(--spacing);
+}
+
+main { max-width: 600px }
+
+a { color: blue; }
+em { font-style: italic; }
+strong { font-weight: bold; }
+p { max-width: 50ch; }
+*/
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Anton&family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,600&display=swap');
+
+:root {
+    --font-size: 20px;
+    --color: rgb(219, 58, 26);
+    --gutter: calc(var(--font-size)*1.618);
+}
+
+@media (min-width: 600px) {
+    :root {
+        --font-size: 20px;
+    }
+}
+
+body {
+    background-color: rgb(252, 243, 239);
+    font-size: var(--font-size);
+    color: var(--color);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--gutter);
+    text-align: center;
+    font-family: 'Bodoni Moda', serif;
+}
+
+#channel-title {
+    font-size: calc(var(--font-size)*4.8);
+    margin-bottom: -10px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+}
+
+#channel-blocks {
+    padding-left: 28vw;
+    padding-right: 28vw;
+}
+
+#channel-users {
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+ul, li {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+ul:first-child {
+    margin-top: -4rem;
+}
+
+ul {
+    margin-bottom: 5rem;
+}
+
+picture {
+    display: flex;
+    justify-content: center;
+}
+
+img, blockquote, iframe, video {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: var(--color);
+    box-shadow: 2px 2px 4px rgb(175, 175, 175);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 350px;
+    height: 350px;
+}
+
+blockquote {
+    padding: 2rem;
+}
+
+em { 
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    margin-bottom: 2rem;
 }

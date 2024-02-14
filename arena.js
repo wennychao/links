@@ -40,13 +40,10 @@ let renderBlock = (block) => {
 			<li>
 				<p><em>Link</em></p>
 				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
 				</picture>
 				<h3>${ block.title }</h3>
 				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -54,12 +51,34 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		// …up to you!
+		let ImageItem =
+			`
+			<li>
+				<p><em>Image</em></p>
+		    	<picture>
+					<img src="${block.image.large.url}"alt="${block.title} by ${block.author}">
+				</picture>
+				<h3>${ block.title }</h3>
+				${ block.description_html }
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
 
 	// Text!
 	else if (block.class == 'Text') {
-		// …up to you!
+		console.log(block)
+		let textItem =
+			`
+			<li>
+				<p><em>Text</em></p>
+				<blockquote>
+					${block.content_html}
+				</blockquote>
+				<p><a href="${ block.content.url }">See the original ↗</a></p>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
 	// Uploaded (not linked) media…
@@ -83,7 +102,17 @@ let renderBlock = (block) => {
 
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			// …up to you!
+			let pdfItem =
+				`
+				<li>
+					<p><em>PDF</em></p>
+						<picture>
+							<img src="${block.image.large.url}" alt="${block.title}"
+						</picture>
+				</li>
+				<p><a href="${ block.attachment.url }">See the original ↗</a></p>
+				`
+			channelBlocks.insertAdjacentHTML('beforeend', pdfItem);
 		}
 
 		// Uploaded audio!
