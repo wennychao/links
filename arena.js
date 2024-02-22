@@ -55,7 +55,7 @@ let renderBlock = (block) => {
 	else if (block.class == 'Image') {
 		let ImageItem =
 			`
-			<li>
+			<li class="image-block">
 				<p><em>Image</em></p>
 		    	<picture>
 					<img src="${block.image.large.url}"alt="${block.title} by ${block.author}">
@@ -72,7 +72,7 @@ let renderBlock = (block) => {
 		console.log(block)
 		let textItem =
 			`
-			<li>
+			<li class="text-block">
 				<p><em>Text</em></p>
 				<blockquote>
 					${block.content_html}
