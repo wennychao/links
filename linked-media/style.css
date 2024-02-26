@@ -31,7 +31,7 @@
   }
 
 body {
-    background-color: rgb(25, 23, 23);
+    background-color: var(--color);
     font-size: var(--font-size);
     color: var(--color);
     display: flex;
@@ -80,7 +80,6 @@ body {
     display: flex;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    text-transform: uppercase;
 }
 
 #file-container { 
@@ -111,7 +110,7 @@ body {
 }
 
 #project {
-    background-color:rgb(255, 238, 0);
+    background-color:rgb(247, 240, 218);
     width: 100px;
     height: 20px;
     border-top-left-radius: 5px;
@@ -185,6 +184,37 @@ li:hover {
     color: black;
 }
 
+picture {
+    display: flex;
+    justify-content: center;
+}
+
+img, blockquote, iframe, video {
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: var(--color);
+    box-shadow: 2px 2px 4px rgb(175, 175, 175);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 350px;
+    height: 350px;
+}
+
+blockquote {
+    padding: 2rem;
+}
+
+em { 
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+}
+
 footer {
     margin-bottom: 2rem;
 }
@@ -194,7 +224,7 @@ footer {
     padding: 0;
     align-items: baseline;
     justify-content: center;
-    margin-top: 1.5rem;
+    margin-top: 4rem;
 } 
 
 .signature-item { 
