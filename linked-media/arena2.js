@@ -115,9 +115,9 @@ let renderBlock = (block) => {
 	// }
 
 	// Linked media…
-	// else if (block.class == 'Media') {
+	// if (block.class == 'Media') {
 	// 	let embed = block.embed.type
-
+			
 	// 	// Linked video!
 	// 	if (embed.includes('video')) {
 	// 		// …still up to you, but here’s an example `iframe` element:
@@ -134,7 +134,10 @@ let renderBlock = (block) => {
 
 	// 	// Linked audio!
 	// 	else if (embed.includes('rich')) {
-	// 		// …up to you!
+	// 		console.log(block)
+	// 	let richItem =
+	
+	// 	channelBlocks.insertAdjacentHTML('beforeend', richItem)
 	// 	}
 	// }
 }

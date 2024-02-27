@@ -71,22 +71,33 @@ let renderBlock = (block) => {
 	// }
 
 	// // Text!
-	if (block.class == 'Text') {
-		let textItem = 
-        `
-            <li>
-                <blockquote>${ block.content_html}</blockquote>
-                <h3>${ block.title }</h3>
-	   		    <p>${ block.created_at }</p>
-	 			<p><a href="${ block.source }">See the original ↗</a></p>
-            </li>
-        `
-        channelBlocks.insertAdjacentHTML('beforeend', textItem)
-	}
+	// if (block.class == 'Text') {
+	// 	let textItem = 
+    //     `
+    //         <li>
+    //             <blockquote>${ block.content_html}</blockquote>
+    //             <h3>${ block.title }</h3>
+	//    		    <p>${ block.created_at }</p>
+	//  			<p><a href="${ block.source }">See the original ↗</a></p>
+    //         </li>
+    //     `
+    //     channelBlocks.insertAdjacentHTML('beforeend', textItem)
+	// }
 
 	// Uploaded (not linked) media…
-	// else if (block.class == 'Attachment') {
-	// 	let attachment = block.attachment.content_type // Save us some repetition
+	 if (block.class == 'Attachment') {
+		let attachmentItem = 
+        `
+        <li>
+            <figure>
+                <img src="${ block.image.original.url }">
+            </figure>
+            <h3>${ block.title }</h3>
+            <p>${ block.created_at }</p>
+            <p><a href="${ block.source }">See the original ↗</a></p>
+        </li>
+    `
+        // Save us some repetition
 
 		// Uploaded videos!
 		// if (attachment.includes('video')) {
@@ -98,27 +109,15 @@ let renderBlock = (block) => {
 		// 			<video controls src="${ block.attachment.url }"></video>
 		// 		</li>
 		// 		`
-		// 	channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+		 	channelBlocks.insertAdjacentHTML('beforeend', attachmentItem)
 		// 	// More on video, like the `autoplay` attribute:
 		// 	// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-		// }
+		 }
 
 	// 	// Uploaded PDFs!
-		if (attachment.includes('pdf')) {
-            console.log (block)
-			let pdfItem =
-            `
-            <li>
-                <figure>
-             		<img src="${ block.image.original.url }">
-             	</figure>
-             		<h3>${ block.title }</h3>
-             		<p>${ block.created_at }</p>
-             		<p><a href="${ block.source }">See the original ↗</a></p>
-            </li>
-            `
-            channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
-		}
+		// if (attachment.includes('pdf')) {
+		// 	// …up to you!
+		// }
 
 	// 	// Uploaded audio!
 		// else if (attachment.includes('audio')) {
