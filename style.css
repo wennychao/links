@@ -7,11 +7,6 @@
     --gutter: calc(var(--font-size)*1.618);
 }
 
-@media (min-width: 600px) {
-    :root {
-        --font-size: 20px;
-    }
-}
 
 #file-background {
     background-color: rgb(247, 240, 218);
@@ -31,7 +26,7 @@
   }
 
 body {
-    background-color: rgb(25, 23, 23);
+    background-color: rgb(47, 46, 46);
     font-size: var(--font-size);
     color: var(--color);
     display: flex;
@@ -89,6 +84,10 @@ body {
     align-items: baseline;
     justify-content: center;
 } 
+
+#file-date-underline {
+    width: 316px;
+}
    
 .file-item { 
     margin: 0;
@@ -123,6 +122,16 @@ body {
     padding: 4px 0px 0px 24px;
 }
 
+#my-name {
+    color: rgb(40, 40, 40);
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
 h2 {
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 500;
@@ -140,29 +149,11 @@ h3 {
     margin-top: -20px;
 }
 
-#my-name {
-    color: rgb(40, 40, 40);
-    font-family: "Special Elite", system-ui;
-    font-weight: 400;
-    font-size: 36px;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-}
-
 hr {
     color: var(--color);
     border: 1px solid;
     width: 216px;
     margin: 0 auto;
-}
-
-#file-date-underline {
-    width: 316px;
-}
-
-#signature-underline {
-    width: 300px;
 }
 
 #catagories {
@@ -197,6 +188,10 @@ footer {
     margin-top: 1.5rem;
 } 
 
+#signature-underline {
+    width: 300px;
+}
+
 .signature-item { 
     margin: 2px;
 } 
@@ -213,4 +208,69 @@ footer {
 .text-block {
     padding: 40px;
     background-color: aquamarine;
+}
+
+@media (max-width: 480px) {
+
+
+    :root {
+        --font-size: 14px;
+    }
+
+    h2 {
+        font-size: var(--font-size);
+    }
+
+    #channel-title {
+        font-size: 30px;
+        width: 300px;
+        margin: 0;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    #channel-created-date {
+        font-size: var(--font-size);
+    }
+
+    #file-date-underline {
+        width: 290px;
+    }
+
+    #my-name {
+        font-size: 30px;
+        margin-top: 2.5rem;
+    }
+
+    #channel-description {
+        width: 275px;
+        margin-top: 20px;
+    }
+
+    #channel-link {
+        font-size: var(--font-size);
+    }
+
+    #catagories li {
+        font-size: 16px;
+        width: 145px;
+    }
+
+    hr {
+        width: 200px;
+    }
+
+    #channel-users {
+        font-size: var(--font-size);
+    }
+
+
+    #signature-underline {
+        width: 280px;
+    }
+
+    
 }
