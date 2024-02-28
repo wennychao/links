@@ -132,7 +132,7 @@ main {
 	}
 
 	img {
-		max-inline-size: 80%;
+		max-inline-size: 60%;
 		max-block-size: 100%;
 
 	}
