@@ -13,17 +13,6 @@ let channelSlug = 'design-student-survival' // The “slug” is just the end of
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
-	// Target some elements in your HTML:
-	// let channelTitle = document.getElementById('channel-title')
-	// let channelDescription = document.getElementById('channel-description')
-	// let channelCount = document.getElementById('channel-count')
-	// let channelLink = document.getElementById('channel-link')
-
-	// // Then set their content/attributes to our data:
-	// channelTitle.innerHTML = data.title
-	// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	// channelCount.innerHTML = data.length
-	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
 
@@ -53,131 +42,7 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
-	// // Images!
-	// if (block.class == 'Image') {
-	// 	// …up to you!
-	// 	console.log(block)
-	// 	let imageItem =
-	// 	`
-	// 		<li>
-	// 			<figure>
-	// 				<img src="${ block.image.original.url }">
-	// 			</figure>
-	// 			<h3>${ block.title }</h3>
-	// 			<p><a href="${ block.source }">See the original ↗</a></p>
-	// 		</li>
-	// 	`
-	// 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-	// }
-
-	// // Text!
-	// else if (block.class == 'Text') {
-	// 	// …up to you!
-	// }
-
-	// Uploaded (not linked) media…
-	// else if (block.class == 'Attachment') {
-	// 	let attachment = block.attachment.content_type // Save us some repetition
-
-	// 	// Uploaded videos!
-	// 	// if (attachment.includes('video')) {
-	// 	// 	// …still up to you, but we’ll give you the `video` element:
-	// 	// 	let videoItem =
-	// 	// 		`
-	// 	// 		<li>
-	// 	// 			<p><em>Video</em></p>
-	// 	// 			<video controls src="${ block.attachment.url }"></video>
-	// 	// 		</li>
-	// 	// 		`
-	// 	// 	channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-	// 	// 	// More on video, like the `autoplay` attribute:
-	// 	// 	// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-	// 	// }
-
-	// 	// Uploaded PDFs!
-	// 	// else if (attachment.includes('pdf')) {
-	// 	// 	// …up to you!
-	// 	// }
-
-	// 	// Uploaded audio!
-	// 	// else if (attachment.includes('audio')) {
-	// 	// 	// …still up to you, but here’s an `audio` element:
-	// 	// 	let audioItem =
-	// 	// 		`
-	// 	// 		<li>
-	// 	// 			<p><em>Audio</em></p>
-	// 	// 			<audio controls src="${ block.attachment.url }"></video>
-	// 	// 		</li>
-	// 	// 		`
-	// 	// 	channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-	// 	// 	// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-	// 	// }
-	// }
-
-	// Linked media…
-	// if (block.class == 'Media') {
-	// 	let embed = block.embed.type
-			
-	// 	// Linked video!
-	// 	if (embed.includes('video')) {
-	// 		// …still up to you, but here’s an example `iframe` element:
-	// 		let linkedVideoItem =
-	// 			`
-	// 			<li>
-	// 				<p><em>Linked Video</em></p>
-	// 				${ block.embed.html }
-	// 			</li>
-	// 			`
-	// 		channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-	// 		// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-	// 	}
-
-	// 	// Linked audio!
-	// 	else if (embed.includes('rich')) {
-	// 		console.log(block)
-	// 	let richItem =
-	
-	// 	channelBlocks.insertAdjacentHTML('beforeend', richItem)
-	// 	}
-	// }
 }
-
-
-
-// // It‘s always good to credit your work:
-// let renderUser = (user, container) => { // You can have multiple arguments for a function!
-// 	let userAddress =
-// 		`
-// 		<address>
-// 			<img src="${ user.avatar_image.display }">
-// 			<h3>${ user.first_name }</h3>
-// 			<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
-// 		</address>
-// 		`
-// 	container.insertAdjacentHTML('beforeend', userAddress)
-// }
-
-
-// let highlightClass = 'highlight' // Variables again.
-// let highlightBlocks = document.querySelectorAll('li') 
-
-// highlightBlocks.forEach((block) => {
-// 	let sectionObserver = new IntersectionObserver((entries) => {
-// 		let [entry] = entries
-
-// 		if (entry.isIntersecting) {
-// 			block.classList.add(highlightClass)
-// 		} else {
-// 			block.classList.remove(highlightClass)
-// 		}
-// 	}, {
-// 		root: null, // This is only needed in the example iframe!
-// 		rootMargin: ' 0% -50% 0% -50%', // CSS-ish: top/right/bottom/left.
-// 	})
-
-// 	sectionObserver.observe(block) // Watch each one!
-// })
-
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
