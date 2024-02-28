@@ -202,12 +202,10 @@ footer {
 
 .image-block {
     padding: 40px;
-    background-color: red;
 }
 
 .text-block {
     padding: 40px;
-    background-color: aquamarine;
 }
 
 @media (max-width: 480px) {

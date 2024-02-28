@@ -15,28 +15,26 @@ let channelSlug = 'design-student-survival' // The “slug” is just the end of
 let placeChannelInfo = (data) => {}
 
 
+
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
 
-	// Images!
-	if (block.class == 'Image') {
-		console.log(block)
-		let imageItem =
-		`
-			<li class="item">
-				<figure>
-					<img src="${ block.image.original.url }">
-				</figure>
+	// // Text!
+	if (block.class == 'Text') {
+		let textItem = 
+        `
+            <li>
+                <blockquote>${ block.content_html}</blockquote>
 				<div id="aside">
-				<h3>${ block.title }</h3>
-				<p>${ block.created_at }</p>
-				<p><a href="${ block.source }">See the original ↗</a></p>
+                <h3>${ block.title }</h3>
+	   		    <p>${ block.created_at }</p>
+	 			<p><a href="${ block.source }">See the original ↗</a></p>
 				</div>
-			</li>
-		`
-		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+            </li>
+        `
+        channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 }
 

@@ -38,16 +38,16 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li>
-				<p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
 				</picture>
+				<div id="aside">
 				<h3>${ block.title }</h3>
-				<p>${ block.description_html }</p>
 				<p>${ block.created_at }</p>
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
+				</div>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -158,6 +158,26 @@ let renderBlock = (block) => {
 // }
 
 
+// let highlightClass = 'highlight' // Variables again.
+// let highlightBlocks = document.querySelectorAll('li') 
+
+// highlightBlocks.forEach((block) => {
+// 	let sectionObserver = new IntersectionObserver((entries) => {
+// 		let [entry] = entries
+
+// 		if (entry.isIntersecting) {
+// 			block.classList.add(highlightClass)
+// 		} else {
+// 			block.classList.remove(highlightClass)
+// 		}
+// 	}, {
+// 		root: null, // This is only needed in the example iframe!
+// 		rootMargin: ' 0% -50% 0% -50%', // CSS-ish: top/right/bottom/left.
+// 	})
+
+// 	sectionObserver.observe(block) // Watch each one!
+// })
+
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
@@ -177,3 +197,5 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
 	})
+
+	

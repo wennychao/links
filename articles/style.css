@@ -45,6 +45,16 @@ h1 {
 	text-align: center;
 }
 
+blockquote {
+	line-height: 24px;
+	font-style: italic;
+	text-align: justify;
+	margin-bottom: 1rem;
+	border: 1px  black;
+	border-style:dashed;
+	padding: 20px;
+}
+
 #back {
 	padding: 10px;
 	font-size: 1rem;
@@ -138,12 +148,12 @@ main {
 	}
 
 	#aside {
-		margin-left: -3rem;
+		margin-left: 2rem;
 		width: 450px;
 	}
 
-	p{
-		margin-top: 3rem;
+	blockquote {
+		width: 780px;
 	}
 	
 	ul {
