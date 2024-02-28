@@ -34,6 +34,7 @@ body {
     row-gap: var(--gutter);
     font-family: "Roboto Condensed", sans-serif;
     padding: 30px 30px 30px 30px;
+    overflow-y: hidden;
 }
 
 #channel-title {
