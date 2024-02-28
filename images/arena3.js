@@ -40,6 +40,19 @@ let renderBlock = (block) => {
 	}
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Assuming your list items are inside the channelBlocks
+    var channelBlocks = document.getElementById('channel-blocks');
+
+    channelBlocks.addEventListener('click', function(event) {
+        var clickedItem = event.target.closest('li');
+        if (clickedItem) {
+            clickedItem.classList.toggle('focus');
+        }
+    });
+});
+
+
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
