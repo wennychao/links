@@ -84,9 +84,6 @@ let renderBlock = (block) => {
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-
-
-
 	}
 
 	// Text!
